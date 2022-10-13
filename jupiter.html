@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link href="./style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Planets fact site</title>
+  <style>
+    @media screen  and (min-width: 600px) {
+      .selected{
+        background-color: #D83A34;
+      }
+      .selected:hover{
+        background-color: #D83A34 !important;
+      }
+    }
+  </style>
+</head>
+<body onload="fetchData()">
+  <div class="whale-section">
+    <header class="header">
+      <div class="header__logo">
+        <h2>The planets</h2>
+      </div>
+      <div class="header__planets">
+        <div class="header__planets__icon mobile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" id="burder-icon" onclick="openMenu()">
+            <g fill="#FFF" fill-rule="evenodd">
+              <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z"/>
+            </g>
+          </svg>
+        </div>
+        <ul class="header__logo__list">
+          <li>
+            <a href="./index.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="mercury-icon"></div>
+                <h3>Mercury</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon"  class="mobile"/>
+            </a>
+          </li>
+          <li>
+            <a href="./venus.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="venus-icon"></div>
+                <h3>Venus</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+          <li>
+            <a href="./earth.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="earth-icon"></div>
+                <h3>Earth</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+          <li>
+            <a href="./mars.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="mars-icon"></div>
+                <h3>Mars</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile" />
+            </a>
+          </li>
+          <li>
+            <a href="./jupiter.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="jupiter-icon"></div>
+                <h3>Jupiter</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+          <li>
+            <a href="./saturn.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="saturn-icon"></div>
+                <h3>Saturn</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+          <li>
+            <a href="./uranus.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="uranus-icon"></div>
+                <h3>Uranus</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+          <li class="neptune-border-delete">
+            <a href="./neptune.html">
+              <div class="header__logo__list__li">
+                <div class="header__logo__list__li__icon mobile" id="neptune-icon"></div>
+                <h3>Neptune</h3>
+              </div>
+              <img src="./assets/icon-chevron.svg" alt="Chevron icon" class="mobile"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="content">
+      <div class="content__about">
+        <div class="content__about__image">
+          <img src="./assets/planet-jupiter.svg" alt="Venus image" class="planet-image" />
+        </div>
+        <div class="content__about__block">
+          <ul class="content__about__block__overview">
+            <li class="overview selected" onclick="anotherInfo('Jupiter', 'overview')">
+              <p class="desktop overview__number">01 </p>
+              <div class="content__about__block__overview__text">
+                <p>Overview</p>
+              </div> 
+            </li>
+            <li class="structure" onclick="anotherInfo('Jupiter', 'structure')">
+              <p class="desktop overview__number">02</p>
+              <div class="content__about__block__overview__text">
+                <p class="desktop">Internal </p>
+                <p> Structure</p>
+              </div>
+            </li>
+            <li class="geology" onclick="anotherInfo('Jupiter', 'geology')">
+              <p class="desktop overview__number">03</p>
+              <div class="content__about__block__overview__text">
+                <p class="desktop">Surface </p>
+                <p> Geology</p>
+              </div>
+            </li>
+          </ul>
+          <div class="content__about__block__text">
+            <h1>Jupiter</h1>
+            <p class="text__block">
+              Jupiter is the fifth planet from the Sun and the largest in the Solar System. 
+              It is a gas giant with a mass two and a half times that of all the other 
+              planets in the Solar System combined, but less than one-thousandth the mass 
+              of the Sun.
+            </p>
+            <p class="link-text">Source : <a href="https://en.wikipedia.org/wiki/Jupiter" class="wiki-link"> Wikipedia <img src="./assets/icon-source.svg" alt="source-icon" class="source-icon"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="content__stats">
+        <div class="content__stats__block">
+          <p class="content__stats__block__name">Rotation Time</p>
+          <p class="content__stats__block__number">9.93 Hours</p>
+        </div>
+        <div class="content__stats__block">
+          <p class="content__stats__block__name">Revolution Time</p>
+          <p class="content__stats__block__number">11.86 Years</p>
+        </div>
+        <div class="content__stats__block">
+          <p class="content__stats__block__name">Radius</p>
+          <p class="content__stats__block__number">69,911 KM</p>
+        </div>
+        <div class="content__stats__block">
+          <p class="content__stats__block__name">Average Temp.</p>
+          <p class="content__stats__block__number">-108°c</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="cover__block">
+    <p class="cover__block__text">
+      <span id="zero">B</span>
+      <span id="one">u</span>
+      <span id="two">i</span>
+      <span id="three">l</span>
+      <span id="four">d</span>
+      <span id="five">i</span>
+      <span id="six">n</span>
+      <span id="seven">g</span>
+      <span>...</span></p>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
